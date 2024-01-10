@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>I Love You</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        @font-face {
+            font-family: digit;
+            src: url('digital-7_mono.ttf') format("truetype");
+        }
+    </style>
+    <link href="css/default.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+<body>
+    <div id="mainDiv">
+        <div id="content">
+            <div id="code">
+                <span class="comments">你好亲爱的</span>
+                <br />
+                <span class="comments">我很高兴认识你</span>
+                <br />
+                <span class="comments">抱歉，如果我让你失望了</span>
+                <br />
+                <span class="comments">我想要你留在我身边</span>
+                <br />
+                <span class="comments">我们每个人都实现了自己的梦想</span>
+                <br />
+                <span class="comments">在互相鼓励的同时</span>
+                <br />
+                <span class="comments">因为你是我的灵魂</span>
+                <br />
+                <span class="comments">我要你成为我最终的目标</span>
+                <br />
+                <span class="comments">帮助我实现它</span>
+                <br />
+                <span class="comments">我把我的爱都花在你身上</span>
+                <br />
+                <span class="comments">哦，是的，我也对我的工作充满热情</span>
+                <br />
+                <span class="comments">美丽的姐姐也要保重身体哦</span>
+                <br />
+                <span class="comments">不只是关心病人的健康</span>
+                <br />
+                <span class="comments">最重要的是照顾好自己的健康</span>
+                <br />
+                <span class="comments">进行活动时务必小心</span>
+                <br />
+                <span class="comments">我爱你美人</span>
+                <br />
+                
+            </div>
+            <div id="loveHeart">
+                <canvas id="garden"></canvas>
+                <div id="words">
+                    <div id="messages">
+                        数着日子直到你生日
+                        <div id="elapseClock"></div>
+                    </div>
+                    <div id="loveu">
+                        AKU SAYANG KAMU!
+                        <br/>Love you forever and ever.
+                        <div class="signature">- Raxtor</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var offsetX = $("#loveHeart").width() / 2;
+        var offsetY = $("#loveHeart").height() / 2 - 55;
+        var together = new Date();
+        together.setFullYear(2024,1,4);
+        together.setHours(0);
+        together.setMinutes(0);
+        together.setSeconds(0);
+        together.setMilliseconds(0);
+        if (!document.createElement('canvas').getContext) {
+            var msg = document.createElement("div");
+            msg.id = "errorMsg";
+            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+            document.body.appendChild(msg);
+            $("#code").css("display", "none")
+            $("#copyright").css("position", "absolute");
+            $("#copyright").css("bottom", "10px");
+            document.execCommand("stop");
+        } else {
+            setTimeout(function () {
+                startHeartAnimation();
+            }, 5000);
+            timeElapse(together);
+            setInterval(function () {
+                timeElapse(together);
+            }, 500);
+            adjustCodePosition();
+            $("#code").typewriter();
+        }
+    </script>
+    <audio src="qingge.mp3" autoplay="true" />
+</body>
+</html>
